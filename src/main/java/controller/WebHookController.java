@@ -124,4 +124,10 @@ public class WebHookController {
 		}
 		return false;
 	}
+	
+	@RequestMapping(value = "/", method = RequestMethod.GET)
+	public ResponseEntity<String> index(HttpServletRequest request) {
+		LOGGER.info("Receive GET request to /");
+		return new ResponseEntity<String>("Its Working...", HttpStatus.OK);
+	}
 }
